@@ -1,0 +1,24 @@
+<h1>RSS Sources</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>URL</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @sources.each do |source| %>
+      <tr>
+        <td><%= source.name %></td>
+        <td><%= link_to source.url, source.url, target: "_blank" %></td>
+        <td>
+          <%= button_to "Delete", source, method: :delete, data: { confirm: "Are you sure?" } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<p><%= link_to "Add New Source", new_source_path %></p>

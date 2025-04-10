@@ -1,0 +1,19 @@
+<h1>Add a New RSS Source</h1>
+
+<%= form_with model: @source, local: true do |form| %>
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p>
+
+  <p>
+    <%= form.label :url %><br>
+    <%= form.text_field :url %>
+  </p>
+
+  <p>
+    <%= form.submit "Add Source" %>
+  </p>
+<% end %>
+
+<p><%= link_to "Back to Sources", sources_path %></p>

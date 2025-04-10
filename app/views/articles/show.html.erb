@@ -1,0 +1,14 @@
+<h1><%= @article.title %></h1>
+<p><strong>Published At:</strong> <%= @article.published_at.strftime("%B %d, %Y %H:%M") %></p>
+
+<p><%= @article.content %></p>
+
+<p><strong>Original Link:</strong> <%= link_to "Read More", @article.link, target: "_blank" %></p>
+
+<p><strong>Sources:</strong>
+  <% @article.sources.each do |source| %>
+    <%= link_to source.name, source.url, target: "_blank" %> 
+  <% end %>
+</p>
+
+<p><%= link_to "Back to Articles", articles_path %></p>
